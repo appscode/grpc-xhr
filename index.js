@@ -1,4 +1,4 @@
-var rsvp = require('rsvp');
+var RSVP = require('rsvp');
 var preset = require('./config');
 
 // Adapted from https://github.com/guidj/jsonuri-js
