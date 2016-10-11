@@ -76,7 +76,11 @@ module.exports = function(path, verb, config, p, body) {
                 }
             }
         };
-        xhr.send(body);
+        if (body) {
+            xhr.send(JSON.stringify(body));
+        } else {
+            xhr.send();
+        }
     });
     return promise;
 };
