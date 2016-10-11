@@ -1,6 +1,6 @@
 {
   "name": "grpc-xhr",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple Ajax Client for GRPC Gateway",
   "main": "index.js",
   "scripts": {
