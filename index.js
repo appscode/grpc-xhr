@@ -62,9 +62,9 @@ module.exports = function(path, verb, config, p, body) {
             // Otherwise, CORS is not supported by the browser.
             xhr = null;
         }
-        for (var key in config.header) {
-            if (config.header.hasOwnProperty(key)) {
-                xhr.setRequestHeader(key, config.header[key]);
+        for (var key in config.headers) {
+            if (config.headers.hasOwnProperty(key)) {
+                xhr.setRequestHeader(key, config.headers[key]);
             }
         }
         xhr.onreadystatechange = function() {
