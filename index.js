@@ -68,9 +68,14 @@ module.exports = function(path, verb, config, p, body) {
             }
         }
         xhr.onreadystatechange = function() {
+            var responseText = this.responseText;
+            if (config.skipResponsePrefixLength) {
+                responseText = this.responseText.substring(config.skipResponsePrefixLength, this.responseText.length);
+                console.log('response length', responseText, config.skipResponsePrefixLength);
+            }
             if (this.readyState === 4) {
                 if (this.status >= 200 && this.status < 400) {
-                    resolve(JSON.parse(this.responseText));
+                    resolve(JSON.parse(responseText));
                 } else {
                     reject(this);
                 }
