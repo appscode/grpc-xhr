@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/appscode/grpc-xhr#readme",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.16.4",
     "rsvp": "^3.3.3"
   }
 }
