@@ -69,7 +69,7 @@ module.exports = function(path, verb, config, p, body) {
         }
         xhr.onreadystatechange = function() {
             var responseText = this.responseText;
-            if (config.skipResponsePrefixLength) {
+            if (config.skipResponsePrefixLength > 0) {
                 responseText = responseText.substring(config.skipResponsePrefixLength);
             }
             if (this.readyState === 4) {
