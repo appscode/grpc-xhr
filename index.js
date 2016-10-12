@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var RSVP = require('rsvp');
 var preset = require('./config');
 
@@ -37,7 +38,7 @@ function mapJSONToUriParams(data, encode, prefix) {
 }
 
 module.exports = function(path, verb, config, p, body) {
-    var config = Object.assign({}, preset, config);
+    var config = _.merge({}, preset, config);
     if (p) {
         q = mapJSONToUriParams(p);
         if (q) {
