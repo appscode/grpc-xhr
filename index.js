@@ -40,7 +40,7 @@ function mapJSONToUriParams(data, encode, prefix) {
 module.exports = function(path, verb, config, p, body) {
     var config = _.merge({}, preset, config);
     if (p) {
-        q = mapJSONToUriParams(p);
+        q = mapJSONToUriParams(p, false);
         if (q) {
             path += '?' + q;
         }
