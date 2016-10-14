@@ -77,7 +77,7 @@ module.exports = function(path, verb, config, p, body) {
                 if (this.status >= 200 && this.status < 400) {
                     resolve(JSON.parse(responseText));
                 } else {
-                    reject(this);
+                    reject(this.status + ':' + this.statusText);
                 }
             }
         };
