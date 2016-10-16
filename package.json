@@ -12,6 +12,7 @@
   },
   "keywords": [
     "grpc",
+    "protobuf",
     "xhr"
   ],
   "author": "AppsCode Inc.",
