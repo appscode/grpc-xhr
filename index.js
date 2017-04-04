@@ -68,6 +68,7 @@ module.exports = function(path, verb, config, p, body) {
                 xhr.setRequestHeader(key, config.headers[key]);
             }
         }
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onreadystatechange = function() {
             var responseText = this.responseText;
             if (config.skipResponsePrefixLength > 0) {
