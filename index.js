@@ -75,13 +75,20 @@ module.exports = function(path, verb, config, p, body) {
                 responseText = responseText.substring(config.skipResponsePrefixLength);
             }
             if (this.readyState === 4) {
+                try {
+                    responseText = JSON.parse(responseText);
+                } catch (e) {
+                    // response was not JSON formatted
+                }
                 if (this.status >= 200 && this.status < 400) {
-                    resolve(JSON.parse(responseText));
+                    resolve(responseText);
                 } else {
                     reject({
-                        status: this.status,
-                        statusText: this.statusText,
-                        responseText: responseText
+                        status: {
+                            code: this.status,
+                            status: this.statusText
+                        },
+                        response: responseText
                     });
                 }
             }
