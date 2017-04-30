@@ -1,7 +1,7 @@
 module.exports = {
     domain: '', // eg: 'https://api.appscode.com'
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
     },
     withCredentials: false
